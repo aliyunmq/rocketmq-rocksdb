@@ -55,6 +55,7 @@ NATIVE_JAVA_CLASSES = \
 	org.rocksdb.RateLimiter\
 	org.rocksdb.ReadOptions\
 	org.rocksdb.RemoveEmptyValueCompactionFilter\
+	org.rocksdb.RemoveConsumeQueueCompactionFilter\
 	org.rocksdb.RestoreOptions\
 	org.rocksdb.RocksCallbackObject\
 	org.rocksdb.RocksDB\

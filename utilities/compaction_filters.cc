@@ -11,6 +11,7 @@
 #include "rocksdb/utilities/options_type.h"
 #include "utilities/compaction_filters/layered_compaction_filter_base.h"
 #include "utilities/compaction_filters/remove_emptyvalue_compactionfilter.h"
+#include "utilities/compaction_filters/remove_consumequeue_compactionfilter.h"
 
 namespace ROCKSDB_NAMESPACE {
 static int RegisterBuiltinCompactionFilters(ObjectLibrary& library,
@@ -21,6 +22,13 @@ static int RegisterBuiltinCompactionFilters(ObjectLibrary& library,
          std::unique_ptr<CompactionFilter>* /*guard*/,
          std::string* /*errmsg*/) {
         return new RemoveEmptyValueCompactionFilter();
+      });
+  library.AddFactory<CompactionFilter>(
+      RemoveConsumeQueueCompactionFilter::kClassName(),
+      [](const std::string& /*uri*/,
+         std::unique_ptr<CompactionFilter>* /*guard*/,
+         std::string* /*errmsg*/) {
+        return new RemoveConsumeQueueCompactionFilter(0);
       });
   return 1;
 }

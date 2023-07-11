@@ -42,7 +42,7 @@ quoted_perl_command = $(subst ','\'',$(perl_command))
 # `make install`
 
 # Set the default DEBUG_LEVEL to 1
-DEBUG_LEVEL?=1
+DEBUG_LEVEL?=0
 
 # OBJ_DIR is where the object files reside.  Default to the current directory
 OBJ_DIR?=.

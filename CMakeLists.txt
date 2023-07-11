@@ -884,6 +884,7 @@ set(SOURCES
         utilities/checkpoint/checkpoint_impl.cc
         utilities/compaction_filters.cc
         utilities/compaction_filters/remove_emptyvalue_compactionfilter.cc
+        utilities/compaction_filters/remove_consumequeue_compactionfilter.cc
         utilities/counted_fs.cc
         utilities/debug.cc
         utilities/env_mirror.cc

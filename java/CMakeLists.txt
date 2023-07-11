@@ -50,6 +50,7 @@ set(JNI_NATIVE_SOURCES
         rocksjni/persistent_cache.cc
         rocksjni/ratelimiterjni.cc
         rocksjni/remove_emptyvalue_compactionfilterjni.cc
+        rocksjni/remove_consumequeue_compactionfilterjni.cc
         rocksjni/restorejni.cc
         rocksjni/rocks_callback_object.cc
         rocksjni/rocksdb_exception_test.cc
@@ -202,6 +203,7 @@ set(JAVA_MAIN_CLASSES
   src/main/java/org/rocksdb/ReadOptions.java
   src/main/java/org/rocksdb/ReadTier.java
   src/main/java/org/rocksdb/RemoveEmptyValueCompactionFilter.java
+  src/main/java/org/rocksdb/RemoveConsumeQueueCompactionFilter.java
   src/main/java/org/rocksdb/RestoreOptions.java
   src/main/java/org/rocksdb/ReusedSynchronisationType.java
   src/main/java/org/rocksdb/RocksCallbackObject.java
@@ -471,6 +473,7 @@ if(${CMAKE_VERSION} VERSION_LESS "3.11.4")
           org.rocksdb.RateLimiter
           org.rocksdb.ReadOptions
           org.rocksdb.RemoveEmptyValueCompactionFilter
+          org.rocksdb.RemoveConsumeQueueCompactionFilter
           org.rocksdb.RestoreOptions
           org.rocksdb.RocksCallbackObject
           org.rocksdb.RocksDB

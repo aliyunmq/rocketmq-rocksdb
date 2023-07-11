@@ -269,6 +269,7 @@ LIB_SOURCES =                                                   \
   utilities/checkpoint/checkpoint_impl.cc                       \
   utilities/compaction_filters.cc                               \
   utilities/compaction_filters/remove_emptyvalue_compactionfilter.cc    \
+  utilities/compaction_filters/remove_consumequeue_compactionfilter.cc    \
   utilities/convenience/info_log_finder.cc                      \
   utilities/counted_fs.cc                                       \
   utilities/debug.cc                                            \
@@ -677,6 +678,7 @@ JNI_NATIVE_SOURCES =                                          \
   java/rocksjni/persistent_cache.cc                           \
   java/rocksjni/ratelimiterjni.cc                             \
   java/rocksjni/remove_emptyvalue_compactionfilterjni.cc      \
+  java/rocksjni/remove_consumequeue_compactionfilterjni.cc      \
   java/rocksjni/cassandra_compactionfilterjni.cc              \
   java/rocksjni/cassandra_value_operator.cc                   \
   java/rocksjni/restorejni.cc                                 \
