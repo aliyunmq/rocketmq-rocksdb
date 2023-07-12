@@ -15,11 +15,12 @@ namespace ROCKSDB_NAMESPACE {
 
 class RemoveConsumeQueueCompactionFilter : public CompactionFilter {
 private:
-    static const int CQ_MIN_SIZE = 36;
+  RemoveConsumeQueueCompactionFilter(long long minPhyOffset);
+  static const int CQ_MIN_SIZE = 36;
     static const int PHY_OFFSET_OFFSET = 0;
 
 private:
-    long minPhyOffset_;
+    long long minPhyOffset_;
 
  public:
   RemoveConsumeQueueCompactionFilter(long minPhyOffset);
@@ -31,7 +32,7 @@ private:
   bool Filter(int level, const Slice& key, const Slice& existing_value,
               std::string* new_value, bool* value_changed) const override;
 
-  static long getLong(const Slice& value, int offset);
+  static long long getLong(const Slice& value, int offset);
 };
 
 }  // namespace ROCKSDB_NAMESPACE

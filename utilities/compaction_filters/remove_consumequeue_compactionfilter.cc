@@ -12,8 +12,8 @@
 
 namespace ROCKSDB_NAMESPACE {
 
-RemoveConsumeQueueCompactionFilter::RemoveConsumeQueueCompactionFilter(long minPhyOffset) {
-    this->minPhyOffset_ = minPhyOffset;
+RemoveConsumeQueueCompactionFilter::RemoveConsumeQueueCompactionFilter(long long minPhyOffset) {
+  this->minPhyOffset_ = minPhyOffset;
 }
 
 bool RemoveConsumeQueueCompactionFilter::Filter(int /*level*/,
@@ -21,27 +21,27 @@ bool RemoveConsumeQueueCompactionFilter::Filter(int /*level*/,
                                                 const Slice& existing_value,
                                                 std::string* /*new_value*/,
                                                 bool* /*value_changed*/) const {
-    if (key.empty() || existing_value.empty()) {
-        return false;
-    }
-    if (existing_value.size() < CQ_MIN_SIZE) {
-        return false;
-    }
+  if (key.empty() || existing_value.empty()) {
+    return false;
+  }
+  if (existing_value.size() < CQ_MIN_SIZE) {
+    return false;
+  }
 
-    long phyOffset = getLong(existing_value, PHY_OFFSET_OFFSET);
-    return phyOffset < this->minPhyOffset_;
+  long long phyOffset = getLong(existing_value, PHY_OFFSET_OFFSET);
+  return phyOffset < this->minPhyOffset_;
 }
 
-long RemoveConsumeQueueCompactionFilter::getLong(const Slice& value, int offset) {
-    const char* valueCharData = value.data();
-    return ((((long)valueCharData[offset]          ) << 56) |
-            (((long)valueCharData[offset+1]  & 0xff) << 48) |
-            (((long)valueCharData[offset+2]  & 0xff) << 40) |
-            (((long)valueCharData[offset+3]  & 0xff) << 32) |
-            (((long)valueCharData[offset+4]  & 0xff) << 24) |
-            (((long)valueCharData[offset+5]  & 0xff) << 16) |
-            (((long)valueCharData[offset+6]  & 0xff) <<  8) |
-            (((long)valueCharData[offset+7]  & 0xff)      ));
+long long RemoveConsumeQueueCompactionFilter::getLong(const Slice& value, int offset) {
+  const char* valueCharData = value.data();
+  return ((((long long)valueCharData[offset]          ) << 56) |
+          (((long long)valueCharData[offset+1]  & 0xff) << 48) |
+          (((long long)valueCharData[offset+2]  & 0xff) << 40) |
+          (((long long)valueCharData[offset+3]  & 0xff) << 32) |
+          (((long long)valueCharData[offset+4]  & 0xff) << 24) |
+          (((long long)valueCharData[offset+5]  & 0xff) << 16) |
+          (((long long)valueCharData[offset+6]  & 0xff) <<  8) |
+          (((long long)valueCharData[offset+7]  & 0xff)      ));
 }
 
 }  // namespace ROCKSDB_NAMESPACE
