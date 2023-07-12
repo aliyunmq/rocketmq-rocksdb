@@ -14,8 +14,6 @@
 namespace ROCKSDB_NAMESPACE {
 
 class RemoveConsumeQueueCompactionFilter : public CompactionFilter {
-private:
-  RemoveConsumeQueueCompactionFilter(long long minPhyOffset);
   static const int CQ_MIN_SIZE = 36;
     static const int PHY_OFFSET_OFFSET = 0;
 
@@ -23,7 +21,7 @@ private:
     long long minPhyOffset_;
 
  public:
-  RemoveConsumeQueueCompactionFilter(long minPhyOffset);
+  RemoveConsumeQueueCompactionFilter(long long minPhyOffset);
 
   static const char* kClassName() { return "RemoveConsumeQueueCompactionFilter"; }
 
