@@ -28,7 +28,7 @@ static int RegisterBuiltinCompactionFilters(ObjectLibrary& library,
       [](const std::string& /*uri*/,
          std::unique_ptr<CompactionFilter>* /*guard*/,
          std::string* /*errmsg*/) {
-        return new RemoveConsumeQueueCompactionFilter(0);
+        return new RemoveConsumeQueueCompactionFilter(0L);
       });
   return 1;
 }
