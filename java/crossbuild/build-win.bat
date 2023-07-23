@@ -1,6 +1,6 @@
 :: install git, java 8, maven, visual studio community 15 (2017)
 
-set MSBUILD=C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Current\Bin\MSBuild.ext
+set MSBUILD=C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Current\Bin\MSBuild.exe
 
 if exist build rd /s /q build
 if exist librocksdbjni-win64.dll del librocksdbjni-win64.dll
