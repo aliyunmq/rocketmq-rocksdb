@@ -6,7 +6,7 @@ if exist build rd /s /q build
 if exist librocksdbjni-win64.dll del librocksdbjni-win64.dll
 mkdir build && cd build
 
-cmake -G "Visual Studio 22 Win64" -DWITH_JNI=1 ..
+cmake -G "Visual Studio 17 Win64" -DWITH_JNI=1 ..
 
 "%MSBUILD%" rocksdb.sln /p:Configuration=Release /m
 
