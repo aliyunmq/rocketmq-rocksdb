@@ -65,9 +65,9 @@ endif ()
 if (WITH_SNAPPY)
   message(STATUS "SNAPPY library is enabled")
 
-  if(DEFINED ENV{SNAPPY_INCLUDE})
-    set(SNAPPY_INCLUDE $ENV{SNAPPY_INCLUDE})
-  endif()
+  #if(DEFINED ENV{SNAPPY_INCLUDE})
+  #  set(SNAPPY_INCLUDE $ENV{SNAPPY_INCLUDE})
+  #endif()
 
   #if(DEFINED ENV{SNAPPY_LIB_DEBUG})
  #   set(SNAPPY_LIB_DEBUG $ENV{SNAPPY_LIB_DEBUG})
@@ -81,6 +81,9 @@ if (WITH_SNAPPY)
   #set(SNAPPY_LIBS debug ${SNAPPY_LIB_DEBUG} optimized ${SNAPPY_LIB_RELEASE})
     set(SNAPPY_LIBS optimized ${SNAPPY_LIB_RELEASE})
 
+  message(STATUS "SNAPPY library is enabled")
+
+  message(STATUS "SNAPPY add_definitions")
 
   add_definitions(${SNAPPY_CXX_FLAGS})
   #include_directories(${SNAPPY_INCLUDE})
