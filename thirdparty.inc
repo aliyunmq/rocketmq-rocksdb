@@ -52,7 +52,7 @@ endif ()
 #
 # Edit these 4 lines to define paths to Snappy
 #
-set(SNAPPY_HOME $ENV{THIRDPARTY_HOME}/Snappy.Library)
+set(SNAPPY_HOME $ENV{THIRDPARTY_HOME}/snappy-1.1.10)
 set(SNAPPY_INCLUDE ${SNAPPY_HOME}/build/native/inc/inc)
 set(SNAPPY_LIB_DEBUG ${SNAPPY_HOME}/lib/native/debug/amd64/snappy.lib)
 set(SNAPPY_LIB_RELEASE ${SNAPPY_HOME}/lib/native/retail/amd64/snappy.lib)

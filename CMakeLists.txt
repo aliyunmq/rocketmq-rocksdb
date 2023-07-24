@@ -92,6 +92,7 @@ if(MSVC)
   option(WITH_XPRESS "build with windows built in compression" OFF)
   option(ROCKSDB_SKIP_THIRDPARTY "skip thirdparty.inc" OFF)
 
+  message(STATUS "hello ROCKSDB_SKIP_THIRDPARTY OFF")
   if(NOT ROCKSDB_SKIP_THIRDPARTY)
     include(${CMAKE_CURRENT_SOURCE_DIR}/thirdparty.inc)
   endif()
