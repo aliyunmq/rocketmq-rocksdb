@@ -94,7 +94,7 @@ endif ()
 set(LZ4_HOME $ENV{THIRDPARTY_HOME}/lz4-1.9.4)
 set(LZ4_INCLUDE ${LZ4_HOME}/lib)
 set(LZ4_LIB_DEBUG ${LZ4_HOME}/build/VS2022/bin/x64_Debug/liblz4_static.lib)
-set(LZ4_LIB_RELEASE ${LZ4_HOME}/build/VS202/bin/x64_Release/liblz4_static.lib)
+set(LZ4_LIB_RELEASE ${LZ4_HOME}/build/VS2022/bin/x64_Release/liblz4_static.lib)
 
 # For compatibility
 if (LZ4)
