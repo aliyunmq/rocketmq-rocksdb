@@ -93,7 +93,6 @@ if(MSVC)
   option(ROCKSDB_SKIP_THIRDPARTY "skip thirdparty.inc" OFF)
 
   if(NOT ROCKSDB_SKIP_THIRDPARTY)
-    message(STATUS "hello ROCKSDB_SKIP_THIRDPARTY OFF")
     include(${CMAKE_CURRENT_SOURCE_DIR}/thirdparty.inc)
   endif()
 else()

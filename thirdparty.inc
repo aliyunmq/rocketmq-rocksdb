@@ -102,7 +102,7 @@ if (LZ4)
 endif ()
 
 if (WITH_LZ4)
-  message(STATUS "LZ4 library is enabled hello")
+  message(STATUS "LZ4 library is enabled")
   
   if(DEFINED ENV{LZ4_INCLUDE})
     set(LZ4_INCLUDE $ENV{LZ4_INCLUDE})
@@ -141,7 +141,7 @@ if (ZLIB)
 endif ()
 
 if (WITH_ZLIB)
-  message(STATUS "ZLIB library is enabled hello")
+  message(STATUS "ZLIB library is enabled")
 
   if(DEFINED ENV{ZLIB_INCLUDE})
     set(ZLIB_INCLUDE $ENV{ZLIB_INCLUDE})
@@ -200,7 +200,7 @@ if (ZSTD)
 endif ()
 
 if (WITH_ZSTD)
-  message(STATUS "ZSTD library is enabled hello")
+  message(STATUS "ZSTD library is enabled")
 
   if(DEFINED ENV{ZSTD_INCLUDE})
     set(ZSTD_INCLUDE $ENV{ZSTD_INCLUDE})
